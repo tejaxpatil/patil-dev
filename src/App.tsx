@@ -1,10 +1,14 @@
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-red-500">
-      <h1 className="text-4xl font-bold text-white">
-        Tailwind CSS v4 is working!
-      </h1>
-    </div>
+    <main className="fade-in">
+      <div className="container section">
+        <h1>Patil</h1>
+
+        <p className="text-muted">
+          Portfolio is under construction.
+        </p>
+      </div>
+    </main>
   );
 }
 

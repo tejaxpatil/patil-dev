@@ -1,0 +1,52 @@
+:root {
+  /* Primary */
+
+  --background: #09090b;
+  --surface: #111113;
+  --surface-hover: #18181b;
+
+  /* Text */
+
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+
+  /* Accent */
+
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+
+  /* Border */
+
+  --border: #27272a;
+
+  /* States */
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* Radius */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Shadow */
+
+  --shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* Container */
+
+  --container: 1280px;
+
+  /* Navbar */
+
+  --navbar-height: 80px;
+
+  /* Animation */
+
+  --transition:
+    250ms cubic-bezier(.4,0,.2,1);
+}
