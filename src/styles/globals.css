@@ -1,10 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@import "./theme.css";
-@import "./utilities.css";
-@import "./animations.css";
+@import './theme.css';
+@import './utilities.css';
+@import './animations.css';
 
-/* Reset */
+:root {
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ------------------------------
+   Global Reset
+------------------------------ */
 
 *,
 *::before,
@@ -14,19 +21,19 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--navbar-height) + 24px);
 }
 
 body {
   margin: 0;
+  min-width: 320px;
 
   background: var(--background);
-
   color: var(--text-primary);
 
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
 
   text-rendering: optimizeLegibility;
-
   -webkit-font-smoothing: antialiased;
 }
 
@@ -36,7 +43,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+p {
+  margin: 0;
 }
 
 button,
@@ -47,12 +59,10 @@ textarea {
 
 img {
   display: block;
-
   max-width: 100%;
 }
 
 a {
   color: inherit;
-
   text-decoration: none;
 }
