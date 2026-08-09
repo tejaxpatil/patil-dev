@@ -63,9 +63,9 @@ function Navbar() {
             </a>
           ))}
 
-          <a href="/resume/Tejas-Patil-Resume.pdf" target="_blank" rel="noreferrer">
+          {/* <a href="/resume/Tejas-Patil-Resume.pdf" target="_blank" rel="noreferrer">
             <Button size="sm">Resume</Button>
-          </a>
+          </a> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -110,7 +110,7 @@ function Navbar() {
                 </motion.a>
               ))}
 
-              <a
+              {/* <a
                 href="/resume/Tejas-Patil-Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
@@ -118,7 +118,7 @@ function Navbar() {
                 className="mt-5"
               >
                 <Button className="w-full">View Resume</Button>
-              </a>
+              </a> */}
             </div>
           </motion.div>
         )}

@@ -4,3 +4,8 @@ export { Card } from './Card';
 export { Container } from './Container';
 export { Divider } from './Divider';
 export { SectionHeading } from './SectionHeading';
+export { ProjectCard } from './ProjectCard';
+export { SkillGroup } from './SkillGroup';
+export { ExperienceCard } from './ExperienceCard';
+export { EducationCard } from './EducationCard';
+export { ContactForm } from './ContactForm';
