@@ -4,7 +4,7 @@ export const projects = [
     number: '01',
     category: 'FULL-STACK WEB APPLICATION',
 
-    title: 'Onetap',
+    title: 'Onetap - Web Superapp',
     subtitle: 'A modular web superapp built around a unified experience.',
 
     description:
@@ -36,11 +36,11 @@ export const projects = [
   },
 
   {
-    id: 'super-app',
+    id: 'API-optimization',
     number: '02',
-    category: 'FULL-STACK / API ENGINEERING',
+    category: 'Backend / API ENGINEERING',
 
-    title: 'Super App using APIs',
+    title: 'API Optimization & Microservices Backend',
     subtitle: 'A multi-service application powered by REST APIs.',
 
     description:
@@ -56,11 +56,8 @@ export const projects = [
     ],
 
     highlights: [
-      'Built REST APIs for shopping, tracking, and recommendations',
-      'Integrated third-party APIs for product data',
-      'Developed a responsive React frontend',
-      'Implemented API optimization and caching strategies',
-      'Designed the application around modular services',
+      'Designed RESTful backend services using FastAPI with modular endpoints, CORS integration, and API optimization techniques.',
+      'Built scalable service architecture for product retrieval, recommendations, and request handling using third-party APIs.',
     ],
 
     featured: true,

@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 
 import { heroContent } from '@/data/hero';
-import { Button, Container } from '@/components/ui';
+// import { Button, Container } from '@/components/ui';
+import { Button, Container, FlipCard } from '@/components/ui';
 
 function Hero() {
   return (
@@ -58,6 +59,7 @@ function Hero() {
               {heroContent.description}
             </motion.p>
 
+
             {/* Actions */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -65,22 +67,29 @@ function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-9 flex flex-col gap-3 sm:flex-row"
             >
-              <a href={heroContent.primaryAction.href}>
-                <Button size="lg" className="w-full sm:w-auto">
-                  {heroContent.primaryAction.label}
-                  <ArrowDownRight size={18} />
-                </Button>
-              </a>
+              <Button
+                size="lg"
+                className="w-full sm:w-auto"
+                onClick={() => {
+                  document
+                    .getElementById('projects')
+                    ?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {heroContent.primaryAction.label}
+                <ArrowDownRight size={18} />
+              </Button>
 
               <a
                 href={heroContent.secondaryAction.href}
                 target="_blank"
                 rel="noreferrer"
+                className="w-full sm:w-auto"
               >
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="w-full sm:w-auto"
+                  className="w-full"
                 >
                   {heroContent.secondaryAction.label}
                   <ArrowUpRight size={18} />
@@ -116,41 +125,14 @@ function Hero() {
           </motion.div>
           </div>
 
-          {/* Future image */}
+        {/* Interactive profile card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="mx-auto w-full max-w-[460px] lg:ml-auto"
+            className="mx-auto aspect-[4/5] w-full max-w-[460px] lg:ml-auto"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)]">
-              {/* Decorative glow */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(59,130,246,0.12),transparent_55%)]"
-              />
-
-              {/* Placeholder */}
-              <div className="relative flex h-full flex-col items-center justify-center p-8 text-center">
-                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)]">
-                  <span className="font-heading text-lg font-semibold text-[var(--accent)]">
-                    TP
-                  </span>
-                </div>
-
-                <p className="font-heading text-lg font-semibold text-[var(--text-primary)]">
-                  Your photo goes here.
-                </p>
-
-                <p className="mt-2 max-w-xs text-sm leading-6 text-[var(--text-secondary)]">
-                  A professional profile image can be added here whenever
-                  you're ready.
-                </p>
-              </div>
-
-              {/* Corner detail */}
-              <div className="absolute bottom-5 right-5 h-3 w-3 rounded-full bg-[var(--accent)] shadow-[0_0_24px_var(--accent)]" />
-            </div>
+            <FlipCard />
           </motion.div>
         </div>
       </Container>

@@ -4,7 +4,7 @@ export const aboutContent = {
   title: 'I like turning ideas into things people can actually use.',
 
   paragraphs: [
-    'I’m Tejas Patil, a Computer Science engineering student with a strong interest in frontend development, backend systems, APIs, and emerging AI technologies.',
+    'I’m Tejas Patil, a Information Science & Engineering student with a strong interest in frontend development, backend systems, APIs, and emerging AI technologies.',
 
     'I enjoy taking an idea from a rough concept to a working product — designing interfaces, connecting APIs, managing application state, and thinking about how the pieces fit together as a complete system.',
 

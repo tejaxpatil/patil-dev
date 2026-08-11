@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { navigationItems } from '@/config/navigation';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui';
+
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,43 +82,33 @@ function Navbar() {
       </nav>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isMenuOpen && (
           <motion.div
             id="mobile-navigation"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="overflow-hidden border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-xl md:hidden"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="pointer-events-auto border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-xl md:hidden"
           >
             <div className="mx-auto flex max-w-[1280px] flex-col px-6 py-6">
               {navigationItems.map((item, index) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{
                     duration: 0.2,
                     delay: index * 0.04,
                   }}
                   onClick={closeMenu}
-                  className="border-b border-[var(--border)] py-4 text-base font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+                  className="block border-b border-[var(--border)] py-4 text-base font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
                 >
                   {item.label}
                 </motion.a>
               ))}
-
-              {/* <a
-                href="/resume/Tejas-Patil-Resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                onClick={closeMenu}
-                className="mt-5"
-              >
-                <Button className="w-full">View Resume</Button>
-              </a> */}
             </div>
           </motion.div>
         )}

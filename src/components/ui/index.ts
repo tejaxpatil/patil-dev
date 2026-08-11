@@ -9,3 +9,4 @@ export { SkillGroup } from './SkillGroup';
 export { ExperienceCard } from './ExperienceCard';
 export { EducationCard } from './EducationCard';
 export { ContactForm } from './ContactForm';
+export { default as FlipCard } from './FlipCard/FlipCard';

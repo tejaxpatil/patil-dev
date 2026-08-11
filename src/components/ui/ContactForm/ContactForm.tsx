@@ -1,17 +1,18 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useForm } from '@formspree/react';
 
 function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [state, handleSubmit, reset] = useForm('xjybwrbl');
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  // function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  //   event.preventDefault();
 
-    setSubmitted(true);
-  }
+  //   setSubmitted(true);
+  // }
 
-  if (submitted) {
+  if (state.succeeded) {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.97 }}
@@ -30,13 +31,13 @@ function ContactForm() {
         </h3>
 
         <p className="mt-3 max-w-md text-sm leading-7 text-[var(--text-secondary)]">
-          Your message has been prepared. I’ll get back to you as soon as
+          Your message has been sent successfully. I’ll get back to you as soon as
           possible.
         </p>
 
         <button
           type="button"
-          onClick={() => setSubmitted(false)}
+          onClick={reset}
           className="mt-7 text-sm font-semibold text-[var(--accent)] hover:underline"
         >
           Send another message
@@ -128,12 +129,22 @@ function ContactForm() {
         />
       </div>
 
+    {state.errors && (
+      <p
+      role="alert"
+      className="mt-5 text-sm text-red-400"
+      >
+      {state.errors.getFormErrors().map((error) => error.message).join(', ')}
+      </p>
+    )}
+
       {/* Submit */}
       <button
         type="submit"
-        className="group mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_40px_rgba(59,130,246,0.25)]"
+        disabled={state.submitting}
+        className="group mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_40px_rgba(59,130,246,0.25)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Send Message
+        {state.submitting ? 'Sending...' : 'Send Message'}
 
         <ArrowUpRight
           size={17}

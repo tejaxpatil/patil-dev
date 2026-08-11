@@ -1,5 +1,5 @@
 export const heroContent = {
-  eyebrow: 'COMPUTER SCIENCE ENGINEERING STUDENT',
+  eyebrow: 'INFORMATION SCIENCE & ENGINEERING STUDENT',
 
   title: 'Building digital experiences that solve real problems.',
 
