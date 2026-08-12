@@ -13,7 +13,7 @@ export const heroContent = {
 
   secondaryAction: {
     label: 'Download Resume',
-    href: '/resume/Tejas-Patil-Resume.pdf',
+    href: `${import.meta.env.BASE_URL}resume/Tejas-Patil-Resume.pdf`
   },
 
   socials: [
