@@ -9,7 +9,7 @@ interface EducationCardProps {
     degree: string;
     period: string;
     location: string;
-    result: string;
+    result?: string;
     description: string;
     coursework: string[];
   };
@@ -49,11 +49,13 @@ function EducationCard({ education }: EducationCardProps) {
       </p>
 
       {/* CGPA */}
-      <div className="mt-8 inline-flex items-baseline gap-2 border-b border-[var(--accent)] pb-1">
-        <span className="font-heading text-2xl font-bold text-[var(--text-primary)]">
-          {education.result}
-        </span>
-      </div>
+        {education.result && (
+          <div className="mt-8 inline-flex items-baseline gap-2 border-b border-[var(--accent)] pb-1">
+            <span className="font-heading text-2xl font-bold text-[var(--text-primary)]">
+              {education.result}
+            </span>
+          </div>
+        )}
 
       <p className="mt-7 text-sm leading-7 text-[var(--text-secondary)]">
         {education.description}
