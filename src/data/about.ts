@@ -25,7 +25,7 @@ export const aboutContent = {
       label: '& Backend',
     },
     {
-      value: 'CSE',
+      value: 'ISE',
       label: 'Engineering',
     },
   ],
